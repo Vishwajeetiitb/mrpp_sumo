@@ -1,0 +1,13 @@
+/init_locations : 245674992 667357309 667357310
+/use_sim_time : True
+/gui : False
+/graph : iit_bombay
+/init_bots : 3
+/done : False
+/sim_length : 3000
+/algo_name : iot_communication_network
+/no_of_deads : 0
+/random_string : test
+/deploy_tag : edge
+/no_of_base_stations : 6
+/iot_device_range : 500

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-06-07 18:20:45 by Eclipse SUMO netedit Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/agrojas/Documents/vishwajeet/ddp_workspace/src/mrpp_iot/graph_sumo/pipeline1.net.xml"/>
+    </input>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<nodes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <location netOffset="0.00,0.00" convBoundary="-1653.12,-1328.12,0.00,-665.62" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <node id="J152" x="-1593.75" y="-800.00" type="priority"/>
+    <node id="J153" x="-1593.75" y="-978.12" type="priority"/>
+    <node id="J154" x="-1400.00" y="-978.12" type="priority"/>
+    <node id="J155" x="-1343.75" y="-906.25" type="priority"/>
+    <node id="J156" x="-1225.00" y="-906.25" type="priority"/>
+    <node id="J157" x="-1090.62" y="-906.25" type="priority"/>
+    <node id="J158" x="-1090.62" y="-968.75" type="priority"/>
+    <node id="J160" x="-909.38" y="-906.25" type="priority"/>
+    <node id="J161" x="-909.38" y="-793.75" type="priority"/>
+    <node id="J162" x="-812.50" y="-793.75" type="dead_end"/>
+    <node id="J163" x="-984.38" y="-793.75" type="dead_end"/>
+    <node id="J164" x="-909.38" y="-693.75" type="priority"/>
+    <node id="J165" x="-812.50" y="-693.75" type="dead_end"/>
+    <node id="J166" x="-984.38" y="-693.75" type="dead_end"/>
+    <node id="J167" x="-759.38" y="-906.25" type="priority"/>
+    <node id="J168" x="-759.38" y="-850.00" type="priority"/>
+    <node id="J169" x="-640.62" y="-906.25" type="priority"/>
+    <node id="J170" x="-640.62" y="-971.88" type="priority"/>
+    <node id="J171" x="-553.12" y="-906.25" type="priority"/>
+    <node id="J172" x="-553.12" y="-856.25" type="dead_end"/>
+    <node id="J173" x="-431.25" y="-906.25" type="priority"/>
+    <node id="J174" x="-431.25" y="-815.62" type="priority"/>
+    <node id="J175" x="-150.00" y="-906.25" type="priority"/>
+    <node id="J176" x="-150.00" y="-837.50" type="priority"/>
+    <node id="J178" x="0.00" y="-906.25" type="priority"/>
+    <node id="J179" x="-1206.25" y="-934.38" type="priority"/>
+    <node id="J180" x="-1056.25" y="-934.38" type="priority"/>
+    <node id="J182" x="-1056.25" y="-1003.12" type="priority"/>
+    <node id="J183" x="-671.88" y="-934.38" type="priority"/>
+    <node id="J184" x="-671.88" y="-971.88" type="priority"/>
+    <node id="J185" x="-553.12" y="-934.38" type="priority"/>
+    <node id="J186" x="-553.12" y="-975.00" type="dead_end"/>
+    <node id="J187" x="-378.12" y="-934.38" type="priority"/>
+    <node id="J188" x="-125.00" y="-934.38" type="priority"/>
+    <node id="J189" x="0.00" y="-934.38" type="priority"/>
+    <node id="J190" x="-1225.00" y="-790.62" type="priority"/>
+    <node id="J191" x="-1206.25" y="-790.62" type="priority"/>
+    <node id="J192" x="-1334.38" y="-934.38" type="priority"/>
+    <node id="J193" x="-1390.62" y="-1006.25" type="priority"/>
+    <node id="J194" x="-1621.88" y="-1006.25" type="priority"/>
+    <node id="J195" x="-1621.88" y="-800.00" type="priority"/>
+    <node id="J196" x="-125.00" y="-1037.50" type="priority"/>
+    <node id="J197" x="-125.00" y="-1153.12" type="priority"/>
+    <node id="J198" x="-312.50" y="-1153.12" type="priority"/>
+    <node id="J199" x="-531.25" y="-1153.12" type="priority"/>
+    <node id="J200" x="-781.25" y="-1153.12" type="priority"/>
+    <node id="J201" x="-1237.50" y="-1153.12" type="priority"/>
+    <node id="J202" x="-1653.12" y="-1153.12" type="priority"/>
+    <node id="J203" x="-1653.12" y="-800.00" type="priority"/>
+    <node id="J204" x="-1090.62" y="-1075.00" type="priority"/>
+    <node id="J205" x="-1196.88" y="-1075.00" type="priority"/>
+    <node id="J206" x="-1196.88" y="-1031.25" type="dead_end"/>
+    <node id="J208" x="-1134.38" y="-968.75" type="dead_end"/>
+    <node id="J209" x="-1015.62" y="-1003.12" type="dead_end"/>
+    <node id="J210" x="-1134.38" y="-1003.12" type="dead_end"/>
+    <node id="J211" x="-1237.50" y="-1031.25" type="priority"/>
+    <node id="J212" x="-781.25" y="-1053.12" type="priority"/>
+    <node id="J213" x="-531.25" y="-1043.75" type="priority"/>
+    <node id="J214" x="-481.25" y="-1043.75" type="priority"/>
+    <node id="J215" x="-481.25" y="-1006.25" type="priority"/>
+    <node id="J216" x="-706.25" y="-1053.12" type="dead_end"/>
+    <node id="J217" x="0.00" y="-1153.12" type="priority"/>
+    <node id="J218" x="-196.88" y="-1037.50" type="dead_end"/>
+    <node id="J219" x="-125.00" y="-978.12" type="priority"/>
+    <node id="J220" x="-196.88" y="-978.12" type="dead_end"/>
+    <node id="J221" x="-312.50" y="-1053.12" type="priority"/>
+    <node id="J222" x="-450.00" y="-1043.75" type="priority"/>
+    <node id="J223" x="-450.00" y="-1006.25" type="dead_end"/>
+    <node id="J224" x="-481.25" y="-1084.38" type="dead_end"/>
+    <node id="J225" x="-450.00" y="-1084.38" type="dead_end"/>
+    <node id="J226" x="-875.00" y="-1053.12" type="dead_end"/>
+    <node id="J227" x="-1056.25" y="-1046.88" type="priority"/>
+    <node id="J228" x="-1015.62" y="-1046.88" type="priority"/>
+    <node id="J229" x="-1015.62" y="-934.38" type="priority"/>
+    <node id="J230" x="-1015.62" y="-965.62" type="dead_end"/>
+    <node id="J231" x="-706.25" y="-934.38" type="priority"/>
+    <node id="J232" x="-706.25" y="-971.88" type="priority"/>
+    <node id="J233" x="-378.12" y="-815.62" type="priority"/>
+    <node id="J234" x="-781.25" y="-1000.00" type="priority"/>
+    <node id="J235" x="-875.00" y="-1000.00" type="dead_end"/>
+    <node id="J236" x="-781.25" y="-850.00" type="priority"/>
+    <node id="J237" x="-125.00" y="-837.50" type="priority"/>
+    <node id="J239" x="-262.50" y="-665.62" type="dead_end"/>
+    <node id="J240" x="-262.50" y="-971.88" type="priority"/>
+    <node id="J241" x="-331.25" y="-971.88" type="priority"/>
+    <node id="J242" x="-331.25" y="-1037.50" type="priority"/>
+    <node id="J243" x="-1271.88" y="-1006.25" type="priority"/>
+    <node id="J244" x="-1271.88" y="-668.75" type="dead_end"/>
+    <node id="J245" x="-984.38" y="-1046.88" type="priority"/>
+    <node id="J246" x="-1015.62" y="-1328.12" type="dead_end"/>
+    <node id="J247" x="-509.38" y="-987.50" type="priority"/>
+    <node id="J248" x="-509.38" y="-818.75" type="priority"/>
+    <node id="J249" x="-553.12" y="-818.75" type="dead_end"/>
+    <node id="J250" x="-965.62" y="-1031.25" type="priority"/>
+    <node id="J251" x="-965.62" y="-834.38" type="priority"/>
+    <node id="J252" x="-996.88" y="-834.38" type="dead_end"/>
+</nodes>

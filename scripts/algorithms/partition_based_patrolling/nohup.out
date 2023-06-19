@@ -1,0 +1,117 @@
+/init_locations : 245674992
+/use_sim_time : True
+/gui : False
+/graph : iit_bombay
+/init_bots : 1
+/done : False
+/sim_length : 30000
+/algo_name : iot_communication_network
+/no_of_deads : 0
+/random_string : test
+/deploy_tag : edge
+/no_of_base_stations : 10
+/iot_device_range : 350
+Algorithm took 0:00:06.574946
+──────────────────────────────────────────────────────────────────────────────────────────────────── 
+
+Traceback (most recent call last):
+  File "config_simulate.py", line 45, in <module>
+    rospy.set_param('/init_locations',init_locations)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/client.py", line 539, in set_param
+    _param_server[param_name] = param_value #MasterProxy does all the magic for us
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/msproxy.py", line 136, in __setitem__
+    self.target.setParam(rospy.names.get_caller_id(), resolved_key, val)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 72, in apport_excepthook
+    from apport.fileutils import likely_packaged, get_recent_crashes
+  File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+    from apport.report import Report
+  File "/usr/lib/python3/dist-packages/apport/report.py", line 32, in <module>
+    import apport.fileutils
+  File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 12, in <module>
+    import os, glob, subprocess, os.path, time, pwd, sys, requests_unixsocket
+  File "/usr/lib/python3/dist-packages/requests_unixsocket/__init__.py", line 1, in <module>
+    import requests
+  File "/home/agrojas/.local/lib/python3.8/site-packages/requests/__init__.py", line 45, in <module>
+    from .exceptions import RequestsDependencyWarning
+  File "/home/agrojas/.local/lib/python3.8/site-packages/requests/exceptions.py", line 9, in <module>
+    from .compat import JSONDecodeError as CompatJSONDecodeError
+  File "/home/agrojas/.local/lib/python3.8/site-packages/requests/compat.py", line 11, in <module>
+    import chardet
+  File "/usr/lib/python3/dist-packages/chardet/__init__.py", line 20, in <module>
+    from .universaldetector import UniversalDetector
+  File "/usr/lib/python3/dist-packages/chardet/universaldetector.py", line 48, in <module>
+    from .sbcsgroupprober import SBCSGroupProber
+  File "/usr/lib/python3/dist-packages/chardet/sbcsgroupprober.py", line 38, in <module>
+    from .langhebrewmodel import Win1255HebrewModel
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 844, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 964, in get_code
+  File "<frozen importlib._bootstrap_external>", line 609, in _validate_timestamp_pyc
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "config_simulate.py", line 45, in <module>
+    rospy.set_param('/init_locations',init_locations)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/client.py", line 539, in set_param
+    _param_server[param_name] = param_value #MasterProxy does all the magic for us
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/msproxy.py", line 136, in __setitem__
+    self.target.setParam(rospy.names.get_caller_id(), resolved_key, val)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
