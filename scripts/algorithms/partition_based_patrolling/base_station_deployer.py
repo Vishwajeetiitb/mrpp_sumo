@@ -35,7 +35,7 @@ class Deployer:
         self.net_file  = '{}/graph_sumo/{}.net.xml'.format(self.dirname,self.graph_name)
 
         self.Compute_hull()
-        self.deploy_tag = None # This variable is for knowing where deployed on edge or graph
+        self.deploy_tag = 'edge' # This variable is for knowing where deployed on edge or graph
         self.results_path = '{}/scripts/algorithms/partition_based_patrolling/deployment_results/{}'.format(self.dirname,self.graph_name)
         # if os.path.exists(self.results_path):
         #     shutil.rmtree(self.results_path)
@@ -52,13 +52,15 @@ class Deployer:
             graph_points.append(np.array((data['x'], data['y'])))
         edge_parse = et.parse(self.net_file)
         edge_root = edge_parse.getroot()
-        for e in self.graph.edges(): 
-            shape = self.graph[e[0]][e[1]]['shape'].split()
-            for idx, point in enumerate(shape):
-                p1 = shape[idx]
-                x1 = float(p1.split(",")[0])
-                y1 = float(p1.split(",")[1])
-                graph_points.append(np.array([x1, y1]))
+        for e in self.graph.edges():
+            graph_points.append(np.array([self.graph.nodes[e[1]]['x'], self.graph.nodes[e[1]]['y']]))
+            if 'shape' in self.graph[e[0]][e[1]]:
+                shape = self.graph[e[0]][e[1]]['shape'].split()
+                for idx, point in enumerate(shape):
+                    p1 = shape[idx]
+                    x1 = float(p1.split(",")[0])
+                    y1 = float(p1.split(",")[1])
+                    graph_points.append(np.array([x1, y1]))
 
         self.hull_path = '{}/graph_ml/{}_hull'.format(
             self.dirname, self.graph_name)
@@ -210,7 +212,7 @@ class Deployer:
         edge_parse = et.parse(self.net_file)
         edge_root = edge_parse.getroot()
         for e in edge_root.iter('edge'):
-            shape = e[0].attrib['shape'].split()
+            edge = e[0].attrib['shape'].split()
             points = np.array([p.split(',')
                               for p in edge], dtype=float).tolist()
             for i in range(len(points)-1):
@@ -249,7 +251,7 @@ class Deployer:
             mean = statistics.mean(x_axis)
             b = datetime.datetime.now()
             c = b-a
-            print(self.graph_name ,'Iteration',i,'rho_new:',rho_new,' rho_old:',rho_old, '#Base stations:',no_of_base_stations,'Iteration time(secs):',c.seconds)
+            # print(self.graph_name ,'Iteration',i,'rho_new:',rho_new,' rho_old:',rho_old, '#Base stations:',no_of_base_stations,'Iteration time(secs):',c.seconds)
             if rho_new is not None and rho_old is not None:
                 if abs(rho_new-rho_old)/max(rho_new, rho_old) < 0.001:
                     return self.base_stations_coords,int(max(self.radii))
@@ -261,7 +263,7 @@ class Deployer:
         edge_parse = et.parse(self.net_file)
         edge_root = edge_parse.getroot()
         for e in edge_root.iter('edge'):
-            shape = e[0].attrib['shape'].split()
+            edge = e[0].attrib['shape'].split()
             points = np.array([p.split(',')
                               for p in edge], dtype=float).tolist()
             for i in range(len(points)-1):
@@ -439,14 +441,16 @@ class Deployer:
 
 if __name__ == '__main__':
     deployer = Deployer('pipeline1')
-    device_ranges = sorted([490],reverse=True)
-    start_n = 3
+    device_ranges = sorted([100],reverse=True)
+    start_n = 50
+    deploy_tag = 'graph'
     for device_range in device_ranges:
         vals = []
         for i in range (10):
             n = start_n
             while True:
-                points,r_max = deployer.Deploy_on_graph(no_of_base_stations=n)
+                if deploy_tag == 'edge': points,r_max = deployer.Deploy_on_edges(no_of_base_stations=n)
+                elif deploy_tag == 'graph' : points,r_max = deployer.Deploy_on_graph(no_of_base_stations=n)
                 if r_max<=device_range :
                     if n not in vals:
                         print('{} Base stations for {}m communication range'.format(n,device_range))
