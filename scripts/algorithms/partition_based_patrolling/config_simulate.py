@@ -21,7 +21,7 @@ graphs = ['pipeline1']
 iot_device_ranges = [100,300,500]
 dir_name = rospkg.RosPack().get_path('mrpp_sumo')
 no_of_runs = 1
-deploy_tag = 'edge'
+deploy_tag = 'graph'
 # rospy.init_node('config_simulate')
 for graph_name in graphs:
     graph_path = dir_name +'/graph_ml/'+ graph_name + '.graphml'
