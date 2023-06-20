@@ -108,7 +108,7 @@ def main():
     file_name = rospy.get_param('/random_string')
     file_path = dirname + '/outputs/{}_command.in'.format(file_name)
     file_path1 = dirname + '/outputs/{}_visits.in'.format(file_name)
-    g = nx.read_graphml(dirname + '/graph_ml/' + graph_name + '_tmp.graphml')
+    g = nx.read_graphml(dirname + '/graph_ml/' + graph_name + '.graphml')
     s = Sumo_Wrapper(g, file_path, file_path1)
     gui_status = rospy.get_param('/gui')
     if gui_status :

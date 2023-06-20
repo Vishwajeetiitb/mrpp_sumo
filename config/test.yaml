@@ -1,13 +1,13 @@
-/init_locations : 245674992 667357309 667357310
+/init_locations : J152 J209 J229
 /use_sim_time : True
 /gui : False
-/graph : iit_bombay
+/graph : pipeline1
 /init_bots : 3
 /done : False
-/sim_length : 3000
+/sim_length : 30000
 /algo_name : iot_communication_network
 /no_of_deads : 0
 /random_string : test
-/deploy_tag : edge
-/no_of_base_stations : 6
-/iot_device_range : 500
+/deploy_tag : graph
+/no_of_base_stations : 62
+/iot_device_range : 100

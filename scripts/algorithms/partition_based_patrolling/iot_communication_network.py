@@ -15,7 +15,6 @@ import networkx as nx
 from mrpp_sumo.srv import NextTaskBot, NextTaskBotResponse
 from mrpp_sumo.srv import AlgoReady, AlgoReadyResponse
 from mrpp_sumo.msg import AtNode
-from numba import jit, cuda
 
 import random as rn
 import pandas as pd
