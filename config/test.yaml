@@ -1,8 +1,8 @@
-/init_locations : J152 J209 J229
+/init_locations : J152 J153 J154 J155 J156 J157 J158 J160 J161
 /use_sim_time : True
 /gui : False
 /graph : pipeline1
-/init_bots : 3
+/init_bots : 9
 /done : False
 /sim_length : 30000
 /algo_name : iot_communication_network
