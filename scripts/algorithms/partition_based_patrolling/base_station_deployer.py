@@ -441,7 +441,7 @@ class Deployer:
 
 if __name__ == '__main__':
     deployer = Deployer('pipeline3')
-    device_ranges = sorted([100],reverse=True)
+    device_ranges = sorted([240],reverse=True)
     start_n = 3
     deploy_tag = 'graph'
     for device_range in device_ranges:
