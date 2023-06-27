@@ -22,7 +22,7 @@ import urllib.parse
 import pickle
 
 graph_name = 'pipeline3'
-range = 1000
+range = 110
 deploy_tag = 'graph'
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 # no_of_base_stations = np.load(dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'+ graph_name + '/required_no_of_base_stations.npy')[0]
@@ -114,7 +114,7 @@ hull_trace = go.Scatter(
     mode='lines')
 ## Plot all data
 
-fig = go.Figure(data=[edge_trace, node_trace],
+fig = go.Figure(data=[edge_trace, node_trace,hull_trace],
              layout=go.Layout(
                 title=graph_name,
                 title_x = 0.5,

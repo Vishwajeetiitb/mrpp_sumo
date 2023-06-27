@@ -69,7 +69,7 @@ class Deployer:
             with open(self.hull_path, "rb") as poly_file:
                 self.hull = pickle.load(poly_file)
         else:
-            self.hull = alphashape.alphashape(graph_points).buffer(5)
+            self.hull = alphashape.alphashape(graph_points).buffer(50)
             with open(self.hull_path, "wb") as poly_file:
                 pickle.dump(self.hull, poly_file, pickle.HIGHEST_PROTOCOL)
 
@@ -205,20 +205,26 @@ class Deployer:
 
         return closest[idx].tolist()
 
+
+
     def Deploy_on_edges(self,no_of_base_stations):
-        print('Deploying on')
+        print('Deploying')
         self.deploy_tag = 'edge'
         self.all_edge_segments = []
         edge_parse = et.parse(self.net_file)
         edge_root = edge_parse.getroot()
-        for e in edge_root.iter('edge'):
-            edge = e[0].attrib['shape'].split()
-            points = np.array([p.split(',')
-                              for p in edge], dtype=float).tolist()
-            for i in range(len(points)-1):
-                if points[i][0] != points[i+1][0]:
-                    self.all_edge_segments.append((points[i], points[i+1]))
-
+        for e in self.graph.edges():
+            if 'shape' in self.graph[e[0]][e[1]]:
+                edge = self.graph[e[0]][e[1]]['shape'].split()
+                points = np.array([p.split(',')
+                                for p in edge], dtype=float).tolist()
+                for i in range(len(points)-1):
+                    if points[i][0] != points[i+1][0]:
+                        self.all_edge_segments.append((points[i], points[i+1]))
+            else:
+                self.all_edge_segments.append(([self.graph.nodes[e[0]]['x'], self.graph.nodes[e[0]]['y']], [self.graph.nodes[e[1]]['x'], self.graph.nodes[e[1]]['y']]))
+                
+        # print(self.all_edge_segments)
         self.base_stations_coords = self.Random_initial_points_on_edges(
             no_of_base_stations)
         voronoi = Voronoi(self.base_stations_coords)
@@ -235,7 +241,6 @@ class Deployer:
             rho_old = rho_new
             for idx, region in enumerate(cliped_regions):
                 c_x, c_y, r = smallestenclosingcircle.make_circle(region)
-                print(region)
                 region_poly = Shapely_polygon(region)
                 if region_poly.contains(Shapely_point([c_x, c_y])):
                     self.base_stations_coords.append(
@@ -243,6 +248,7 @@ class Deployer:
                 else:
                     self.base_stations_coords.append(
                         self.Random_initial_points_on_edges(1)[0])
+
 
                 self.radii.append(r)
 
@@ -293,6 +299,13 @@ class Deployer:
                 else:
                     self.base_stations_coords.append(
                         self.Random_initial_points(1)[0])
+
+                # if region_poly.contains(Shapely_point([c_x, c_y])):
+                #     self.base_stations_coords.append(
+                #         self.Projection_on_edges(c_x, c_y))
+                # else:
+                #     self.base_stations_coords.append(
+                        # self.Random_initial_points_on_edges(1)[0])
 
                 self.radii.append(r)
 
@@ -392,17 +405,21 @@ class Deployer:
         edges = []
         edge_parse = et.parse(self.net_file)
         edge_root = edge_parse.getroot()
-        for e in edge_root.iter('edge'):
-            shape = e[0].attrib['shape'].split()
-            for idx, point in enumerate(shape):
-                if idx != len(shape)-1:
-                    p1 = shape[idx]
-                    p2 = shape[idx+1]
-                    x1 = float(p1.split(",")[0])
-                    y1 = float(p1.split(",")[1])
-                    x2 = float(p2.split(",")[0])
-                    y2 = float(p2.split(",")[1])
-                    edges.append([(x1, y1), (x2, y2)])
+        for e in self.graph.edges():
+            if 'shape' in self.graph[e[0]][e[1]]:
+                shape = self.graph[e[0]][e[1]]['shape'].split()
+                for idx, point in enumerate(shape):
+                    if idx != len(shape)-1:
+                        p1 = shape[idx]
+                        p2 = shape[idx+1]
+                        x1 = float(p1.split(",")[0])
+                        y1 = float(p1.split(",")[1])
+                        x2 = float(p2.split(",")[0])
+                        y2 = float(p2.split(",")[1])
+                        edges.append([(x1, y1), (x2, y2)])
+            else : 
+                 edges.append([(self.graph.nodes[e[0]]['x'], self.graph.nodes[e[0]]['y']), (self.graph.nodes[e[1]]['x'], self.graph.nodes[e[1]]['y'])])
+
         total_length = sum(((x2-x1)**2 + (y2-y1)**2) **
                            0.5 for ((x1, y1), (x2, y2)) in edges)
         selected_points = []
@@ -466,10 +483,10 @@ class Deployer:
     
 
 if __name__ == '__main__':
-    deploy_tag = 'graph'
-    deployer = Deployer('pipeline1',deploy_tag)
-    device_ranges = sorted([1000],reverse=True)
-    start_n = 1
+    deploy_tag = 'edge'
+    deployer = Deployer('pipeline3',deploy_tag)
+    device_ranges = sorted([110],reverse=True)
+    start_n = 5
     for device_range in device_ranges:
         if start_n == 1:
             deployer.deploy_single(device_range)
