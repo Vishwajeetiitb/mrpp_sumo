@@ -22,7 +22,7 @@ import urllib.parse
 import pickle
 
 graph_name = 'pipeline3'
-range = 300
+range = 1000
 deploy_tag = 'graph'
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 # no_of_base_stations = np.load(dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'+ graph_name + '/required_no_of_base_stations.npy')[0]
@@ -114,9 +114,9 @@ hull_trace = go.Scatter(
     mode='lines')
 ## Plot all data
 
-fig = go.Figure(data=[edge_trace, node_trace,hull_trace],
+fig = go.Figure(data=[edge_trace, node_trace],
              layout=go.Layout(
-                title=graph_name +' Communication Graph with '+ str(range) +'m Range IoT devices',
+                title=graph_name,
                 title_x = 0.5,
                 titlefont_size=16,
                 showlegend=False,
@@ -134,7 +134,7 @@ fig = go.Figure(data=[edge_trace, node_trace,hull_trace],
 path = '{}/scripts/algorithms/partition_based_patrolling/deployment_results/{}/on_{}/{}m_range'.format(dirname,graph_name,deploy_tag,range)
 n = [int(filename.split('_')[0]) for filename in os.listdir(path)]
 base_stations_df = pd.read_csv('{}/{}_base_stations.csv'.format(path,min(n)),converters={'location': pd.eval,'Radius': pd.eval})
-base_station_logo = Image.open(dirname + '/scripts/algorithms/partition_based_patrolling/plot/cross.png')
+base_station_logo = Image.open(dirname + '/scripts/algorithms/partition_based_patrolling/plot/base.png')
 
 base_stations = []
 icons = []

@@ -25,7 +25,7 @@ from time import sleep
 import sumolib
 
 class Deployer:
-    def __init__(self, graph_name) -> None:
+    def __init__(self, graph_name,deploy_tage) -> None:
         self.graph_name = graph_name
         self.dirname = rospkg.RosPack().get_path('mrpp_sumo')
 
@@ -35,7 +35,7 @@ class Deployer:
         self.net_file  = '{}/graph_sumo/{}.net.xml'.format(self.dirname,self.graph_name)
 
         self.Compute_hull()
-        self.deploy_tag = 'edge' # This variable is for knowing where deployed on edge or graph
+        self.deploy_tag = deploy_tag # This variable is for knowing where deployed on edge or graph
         self.results_path = '{}/scripts/algorithms/partition_based_patrolling/deployment_results/{}'.format(self.dirname,self.graph_name)
         # if os.path.exists(self.results_path):
         #     shutil.rmtree(self.results_path)
@@ -235,6 +235,7 @@ class Deployer:
             rho_old = rho_new
             for idx, region in enumerate(cliped_regions):
                 c_x, c_y, r = smallestenclosingcircle.make_circle(region)
+                print(region)
                 region_poly = Shapely_polygon(region)
                 if region_poly.contains(Shapely_point([c_x, c_y])):
                     self.base_stations_coords.append(
@@ -285,6 +286,7 @@ class Deployer:
             rho_old = rho_new
             for idx, region in enumerate(cliped_regions):
                 c_x, c_y, r = smallestenclosingcircle.make_circle(region)
+                # print(region)
                 region_poly = Shapely_polygon(region)
                 if region_poly.contains(Shapely_point([c_x, c_y])):
                     self.base_stations_coords.append([c_x, c_y])
@@ -418,6 +420,27 @@ class Deployer:
                     selected_points.append([x, y])
                     break
         return selected_points
+    
+    def deploy_single(self,device_range):
+        base_stations_df = pd.DataFrame()
+        covered_nodes = self.graph.nodes
+        # print(self.hull)
+        x, y = self.hull.exterior.coords.xy
+        region = np.column_stack((x, y))[:-1, :]
+        # print(region)
+        c_x,c_y,r = smallestenclosingcircle.make_circle(region)
+        p = [c_x,c_y]
+        base_station_dic = {'location': [p], 'Radius': device_range, 'covered_nodes': [
+                    covered_nodes], 'Total_nodes_covered': len(covered_nodes)}
+        base_stations_df = pd.concat(
+                    [base_stations_df, pd.DataFrame(base_station_dic, index=[0])])
+        path = '{}/on_{}/{}m_range'.format(self.results_path,self.deploy_tag,device_range)
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+        print('{}/{}_base_stations.csv'.format(path,1))
+        base_stations_df.to_csv('{}/{}_base_stations.csv'.format(path,1))
+
 
     def save_data(self,device_range,n):
         base_stations_df = pd.DataFrame()
@@ -437,26 +460,33 @@ class Deployer:
         path = '{}/on_{}/{}m_range'.format(self.results_path,self.deploy_tag,device_range)
         if not os.path.exists(path):
             os.makedirs(path)
+        
         base_stations_df.to_csv('{}/{}_base_stations.csv'.format(path,n))
 
+    
+
 if __name__ == '__main__':
-    deployer = Deployer('pipeline3')
-    device_ranges = sorted([240],reverse=True)
-    start_n = 3
     deploy_tag = 'graph'
+    deployer = Deployer('pipeline1',deploy_tag)
+    device_ranges = sorted([1000],reverse=True)
+    start_n = 1
     for device_range in device_ranges:
-        vals = []
-        for i in range (100):
-            n = start_n
-            while True:
-                if deploy_tag == 'edge': points,r_max = deployer.Deploy_on_edges(no_of_base_stations=n)
-                elif deploy_tag == 'graph' : points,r_max = deployer.Deploy_on_graph(no_of_base_stations=n)
-                if r_max<=device_range :
-                    if n not in vals:
-                        print('{} Base stations for {}m communication range'.format(n,device_range))
-                        vals.append(n)
-                        deployer.save_data(device_range,n)
-                    break
-                else : n +=1
-        start_n = min(vals)
-        print('{} these are the set of base stations for {}m communication range'.format(vals,device_range))
+        if start_n == 1:
+            deployer.deploy_single(device_range)
+            print('Deployed single base station')
+        else:
+            vals = []
+            for i in range (100):
+                n = start_n
+                while True:
+                    if deploy_tag == 'edge': points,r_max = deployer.Deploy_on_edges(no_of_base_stations=n)
+                    elif deploy_tag == 'graph' : points,r_max = deployer.Deploy_on_graph(no_of_base_stations=n)
+                    if r_max<=device_range :
+                        if n not in vals:
+                            print('{} Base stations for {}m communication range'.format(n,device_range))
+                            vals.append(n)
+                            deployer.save_data(device_range,n)
+                        break
+                    else : n +=1
+            start_n = min(vals)
+            print('{} these are the set of base stations for {}m communication range'.format(vals,device_range))
