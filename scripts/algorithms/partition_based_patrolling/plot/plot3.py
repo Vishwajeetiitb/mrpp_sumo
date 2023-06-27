@@ -29,11 +29,11 @@ color_list = [
     '#bcbd22',  # curry yellow-green
     '#17becf'   # blue-teal
 ]
-graph_name = 'iit_bombay'
+graph_name = 'pipeline2'
 
-deploy_tag = ['edge','graph']
-bot = 12
-device_ranges = [250,350,500]
+deploy_tag = ['graph']
+bot = 6
+device_ranges = [100,150]
 row_size = 1
 col_size = 3
 fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=['{}m Communication Range'.format(i) for i in device_ranges])

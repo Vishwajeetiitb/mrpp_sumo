@@ -1,0 +1,806 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d3" for="edge" attr.name="length" attr.type="double"/>
+<key id="d2" for="edge" attr.name="name" attr.type="string"/>
+<key id="d1" for="node" attr.name="y" attr.type="double"/>
+<key id="d0" for="node" attr.name="x" attr.type="double"/>
+<graph edgedefault="directed"><node id="J0">
+  <data key="d0">-28.12</data>
+  <data key="d1">106.25</data>
+</node>
+<node id="J1">
+  <data key="d0">0.0</data>
+  <data key="d1">106.25</data>
+</node>
+<node id="J10">
+  <data key="d0">-181.25</data>
+  <data key="d1">10.94</data>
+</node>
+<node id="J11">
+  <data key="d0">-210.94</data>
+  <data key="d1">48.44</data>
+</node>
+<node id="J12">
+  <data key="d0">-210.94</data>
+  <data key="d1">-9.38</data>
+</node>
+<node id="J13">
+  <data key="d0">-260.94</data>
+  <data key="d1">-9.38</data>
+</node>
+<node id="J14">
+  <data key="d0">-210.94</data>
+  <data key="d1">-42.19</data>
+</node>
+<node id="J15">
+  <data key="d0">-260.94</data>
+  <data key="d1">-42.19</data>
+</node>
+<node id="J16">
+  <data key="d0">-28.12</data>
+  <data key="d1">65.62</data>
+</node>
+<node id="J17">
+  <data key="d0">23.44</data>
+  <data key="d1">65.62</data>
+</node>
+<node id="J18">
+  <data key="d0">-28.12</data>
+  <data key="d1">-43.75</data>
+</node>
+<node id="J19">
+  <data key="d0">231.25</data>
+  <data key="d1">50.0</data>
+</node>
+<node id="J2">
+  <data key="d0">35.94</data>
+  <data key="d1">106.25</data>
+</node>
+<node id="J20">
+  <data key="d0">201.56</data>
+  <data key="d1">50.0</data>
+</node>
+<node id="J21">
+  <data key="d0">201.56</data>
+  <data key="d1">-95.31</data>
+</node>
+<node id="J22">
+  <data key="d0">231.25</data>
+  <data key="d1">-95.31</data>
+</node>
+<node id="J23">
+  <data key="d0">260.94</data>
+  <data key="d1">50.0</data>
+</node>
+<node id="J24">
+  <data key="d0">260.94</data>
+  <data key="d1">-95.31</data>
+</node>
+<node id="J25">
+  <data key="d0">146.88</data>
+  <data key="d1">65.62</data>
+</node>
+<node id="J26">
+  <data key="d0">23.44</data>
+  <data key="d1">37.5</data>
+</node>
+<node id="J27">
+  <data key="d0">57.81</data>
+  <data key="d1">37.5</data>
+</node>
+<node id="J28">
+  <data key="d0">57.81</data>
+  <data key="d1">-12.5</data>
+</node>
+<node id="J29">
+  <data key="d0">104.69</data>
+  <data key="d1">-12.5</data>
+</node>
+<node id="J3">
+  <data key="d0">35.94</data>
+  <data key="d1">137.5</data>
+</node>
+<node id="J30">
+  <data key="d0">104.69</data>
+  <data key="d1">92.19</data>
+</node>
+<node id="J31">
+  <data key="d0">178.12</data>
+  <data key="d1">92.19</data>
+</node>
+<node id="J32">
+  <data key="d0">145.31</data>
+  <data key="d1">-12.5</data>
+</node>
+<node id="J33">
+  <data key="d0">145.31</data>
+  <data key="d1">-95.31</data>
+</node>
+<node id="J34">
+  <data key="d0">-87.5</data>
+  <data key="d1">-12.5</data>
+</node>
+<node id="J35">
+  <data key="d0">-87.5</data>
+  <data key="d1">207.81</data>
+</node>
+<node id="J36">
+  <data key="d0">0.0</data>
+  <data key="d1">-98.44</data>
+</node>
+<node id="J37">
+  <data key="d0">295.31</data>
+  <data key="d1">92.19</data>
+</node>
+<node id="J38">
+  <data key="d0">295.31</data>
+  <data key="d1">-95.31</data>
+</node>
+<node id="J39">
+  <data key="d0">118.75</data>
+  <data key="d1">182.81</data>
+</node>
+<node id="J4">
+  <data key="d0">-28.12</data>
+  <data key="d1">137.5</data>
+</node>
+<node id="J40">
+  <data key="d0">178.12</data>
+  <data key="d1">182.81</data>
+</node>
+<node id="J41">
+  <data key="d0">178.12</data>
+  <data key="d1">-159.38</data>
+</node>
+<node id="J42">
+  <data key="d0">71.88</data>
+  <data key="d1">-159.38</data>
+</node>
+<node id="J43">
+  <data key="d0">71.88</data>
+  <data key="d1">-100.0</data>
+</node>
+<node id="J44">
+  <data key="d0">-260.94</data>
+  <data key="d1">10.94</data>
+</node>
+<node id="J46">
+  <data key="d0">-210.94</data>
+  <data key="d1">207.81</data>
+</node>
+<node id="J47">
+  <data key="d0">-28.12</data>
+  <data key="d1">-159.38</data>
+</node>
+<node id="J48">
+  <data key="d0">-28.12</data>
+  <data key="d1">-96.88</data>
+</node>
+<node id="J49">
+  <data key="d0">-109.38</data>
+  <data key="d1">-96.88</data>
+</node>
+<node id="J5">
+  <data key="d0">-137.5</data>
+  <data key="d1">106.25</data>
+</node>
+<node id="J50">
+  <data key="d0">43.75</data>
+  <data key="d1">207.81</data>
+</node>
+<node id="J51">
+  <data key="d0">143.75</data>
+  <data key="d1">207.81</data>
+</node>
+<node id="J52">
+  <data key="d0">295.31</data>
+  <data key="d1">207.81</data>
+</node>
+<node id="J53">
+  <data key="d0">43.75</data>
+  <data key="d1">235.94</data>
+</node>
+<node id="J54">
+  <data key="d0">143.75</data>
+  <data key="d1">235.94</data>
+</node>
+<node id="J55">
+  <data key="d0">-181.25</data>
+  <data key="d1">234.38</data>
+</node>
+<node id="J57">
+  <data key="d0">43.75</data>
+  <data key="d1">168.75</data>
+</node>
+<node id="J58">
+  <data key="d0">-181.25</data>
+  <data key="d1">-73.44</data>
+</node>
+<node id="J59">
+  <data key="d0">-260.94</data>
+  <data key="d1">-73.44</data>
+</node>
+<node id="J6">
+  <data key="d0">118.75</data>
+  <data key="d1">106.25</data>
+</node>
+<node id="J60">
+  <data key="d0">-181.25</data>
+  <data key="d1">-159.38</data>
+</node>
+<node id="J61">
+  <data key="d0">57.81</data>
+  <data key="d1">-64.06</data>
+</node>
+<node id="J7">
+  <data key="d0">-137.5</data>
+  <data key="d1">48.44</data>
+</node>
+<node id="J8">
+  <data key="d0">-137.5</data>
+  <data key="d1">-12.5</data>
+</node>
+<node id="J9">
+  <data key="d0">-181.25</data>
+  <data key="d1">48.44</data>
+</node>
+<edge source="J0" target="J4">
+  <data key="d2">-E4</data>
+  <data key="d3">31.25</data>
+</edge>
+<edge source="J0" target="J1">
+  <data key="d2">E0</data>
+  <data key="d3">28.12</data>
+</edge>
+<edge source="J0" target="J16">
+  <data key="d2">E16</data>
+  <data key="d3">40.629999999999995</data>
+</edge>
+<edge source="J0" target="J5">
+  <data key="d2">E5</data>
+  <data key="d3">109.38</data>
+</edge>
+<edge source="J1" target="J0">
+  <data key="d2">-E0</data>
+  <data key="d3">28.12</data>
+</edge>
+<edge source="J1" target="J2">
+  <data key="d2">E1</data>
+  <data key="d3">35.94</data>
+</edge>
+<edge source="J1" target="J36">
+  <data key="d2">E36</data>
+  <data key="d3">204.69</data>
+</edge>
+<edge source="J10" target="J9">
+  <data key="d2">-E10</data>
+  <data key="d3">37.5</data>
+</edge>
+<edge source="J10" target="J44">
+  <data key="d2">E38</data>
+  <data key="d3">79.69</data>
+</edge>
+<edge source="J10" target="J58">
+  <data key="d2">E69</data>
+  <data key="d3">84.38</data>
+</edge>
+<edge source="J11" target="J9">
+  <data key="d2">-E11</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J11" target="J12">
+  <data key="d2">E12</data>
+  <data key="d3">57.82</data>
+</edge>
+<edge source="J11" target="J46">
+  <data key="d2">E53</data>
+  <data key="d3">159.37</data>
+</edge>
+<edge source="J12" target="J11">
+  <data key="d2">-E12</data>
+  <data key="d3">57.82</data>
+</edge>
+<edge source="J12" target="J13">
+  <data key="d2">E13</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J12" target="J14">
+  <data key="d2">E14</data>
+  <data key="d3">32.809999999999995</data>
+</edge>
+<edge source="J13" target="J12">
+  <data key="d2">-E13</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J14" target="J12">
+  <data key="d2">-E14</data>
+  <data key="d3">32.809999999999995</data>
+</edge>
+<edge source="J14" target="J15">
+  <data key="d2">E15</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J15" target="J14">
+  <data key="d2">-E15</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J16" target="J0">
+  <data key="d2">-E16</data>
+  <data key="d3">40.629999999999995</data>
+</edge>
+<edge source="J16" target="J17">
+  <data key="d2">E17</data>
+  <data key="d3">51.56</data>
+</edge>
+<edge source="J16" target="J18">
+  <data key="d2">E18</data>
+  <data key="d3">109.37</data>
+</edge>
+<edge source="J17" target="J16">
+  <data key="d2">-E17</data>
+  <data key="d3">51.56</data>
+</edge>
+<edge source="J17" target="J25">
+  <data key="d2">E24</data>
+  <data key="d3">123.44</data>
+</edge>
+<edge source="J17" target="J26">
+  <data key="d2">E26</data>
+  <data key="d3">28.120000000000005</data>
+</edge>
+<edge source="J18" target="J16">
+  <data key="d2">-E18</data>
+  <data key="d3">109.37</data>
+</edge>
+<edge source="J18" target="J48">
+  <data key="d2">E58</data>
+  <data key="d3">53.129999999999995</data>
+</edge>
+<edge source="J19" target="J20">
+  <data key="d2">E19</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J19" target="J22">
+  <data key="d2">E21</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J19" target="J23">
+  <data key="d2">E22</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J2" target="J1">
+  <data key="d2">-E1</data>
+  <data key="d3">35.94</data>
+</edge>
+<edge source="J2" target="J3">
+  <data key="d2">E2</data>
+  <data key="d3">31.25</data>
+</edge>
+<edge source="J2" target="J6">
+  <data key="d2">E6</data>
+  <data key="d3">82.81</data>
+</edge>
+<edge source="J20" target="J19">
+  <data key="d2">-E19</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J20" target="J21">
+  <data key="d2">E20</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J20" target="J25">
+  <data key="d2">E25</data>
+  <data key="d3">56.867273541115026</data>
+</edge>
+<edge source="J21" target="J20">
+  <data key="d2">-E20</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J21" target="J33">
+  <data key="d2">-E43</data>
+  <data key="d3">56.25</data>
+</edge>
+<edge source="J21" target="J22">
+  <data key="d2">E44</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J22" target="J19">
+  <data key="d2">-E21</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J22" target="J21">
+  <data key="d2">-E44</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J22" target="J24">
+  <data key="d2">E45</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J23" target="J19">
+  <data key="d2">-E22</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J23" target="J24">
+  <data key="d2">E23</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J24" target="J23">
+  <data key="d2">-E23</data>
+  <data key="d3">145.31</data>
+</edge>
+<edge source="J24" target="J22">
+  <data key="d2">-E45</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J24" target="J38">
+  <data key="d2">-E46</data>
+  <data key="d3">34.370000000000005</data>
+</edge>
+<edge source="J25" target="J17">
+  <data key="d2">-E24</data>
+  <data key="d3">123.44</data>
+</edge>
+<edge source="J25" target="J20">
+  <data key="d2">-E25</data>
+  <data key="d3">56.867273541115026</data>
+</edge>
+<edge source="J26" target="J17">
+  <data key="d2">-E26</data>
+  <data key="d3">28.120000000000005</data>
+</edge>
+<edge source="J26" target="J27">
+  <data key="d2">E27</data>
+  <data key="d3">34.370000000000005</data>
+</edge>
+<edge source="J27" target="J26">
+  <data key="d2">-E27</data>
+  <data key="d3">34.370000000000005</data>
+</edge>
+<edge source="J27" target="J28">
+  <data key="d2">-E28</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J28" target="J27">
+  <data key="d2">E28</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J28" target="J29">
+  <data key="d2">E29</data>
+  <data key="d3">46.879999999999995</data>
+</edge>
+<edge source="J28" target="J61">
+  <data key="d2">E51</data>
+  <data key="d3">51.56</data>
+</edge>
+<edge source="J29" target="J28">
+  <data key="d2">-E29</data>
+  <data key="d3">46.879999999999995</data>
+</edge>
+<edge source="J29" target="J30">
+  <data key="d2">E30</data>
+  <data key="d3">104.69</data>
+</edge>
+<edge source="J29" target="J32">
+  <data key="d2">E32</data>
+  <data key="d3">40.620000000000005</data>
+</edge>
+<edge source="J3" target="J2">
+  <data key="d2">-E2</data>
+  <data key="d3">31.25</data>
+</edge>
+<edge source="J3" target="J4">
+  <data key="d2">E3</data>
+  <data key="d3">64.06</data>
+</edge>
+<edge source="J30" target="J29">
+  <data key="d2">-E30</data>
+  <data key="d3">104.69</data>
+</edge>
+<edge source="J30" target="J31">
+  <data key="d2">-E31</data>
+  <data key="d3">73.43</data>
+</edge>
+<edge source="J31" target="J40">
+  <data key="d2">-E41</data>
+  <data key="d3">90.62</data>
+</edge>
+<edge source="J31" target="J30">
+  <data key="d2">E31</data>
+  <data key="d3">73.43</data>
+</edge>
+<edge source="J31" target="J37">
+  <data key="d2">E37</data>
+  <data key="d3">117.19</data>
+</edge>
+<edge source="J31" target="J41">
+  <data key="d2">E47</data>
+  <data key="d3">251.57</data>
+</edge>
+<edge source="J32" target="J29">
+  <data key="d2">-E32</data>
+  <data key="d3">40.620000000000005</data>
+</edge>
+<edge source="J32" target="J33">
+  <data key="d2">E33</data>
+  <data key="d3">82.81</data>
+</edge>
+<edge source="J33" target="J32">
+  <data key="d2">-E33</data>
+  <data key="d3">82.81</data>
+</edge>
+<edge source="J33" target="J21">
+  <data key="d2">E43</data>
+  <data key="d3">56.25</data>
+</edge>
+<edge source="J34" target="J8">
+  <data key="d2">-E34</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J34" target="J35">
+  <data key="d2">-E35</data>
+  <data key="d3">220.31</data>
+</edge>
+<edge source="J35" target="J34">
+  <data key="d2">E35</data>
+  <data key="d3">220.31</data>
+</edge>
+<edge source="J35" target="J46">
+  <data key="d2">E54</data>
+  <data key="d3">123.44</data>
+</edge>
+<edge source="J35" target="J50">
+  <data key="d2">E59</data>
+  <data key="d3">131.25</data>
+</edge>
+<edge source="J36" target="J1">
+  <data key="d2">-E36</data>
+  <data key="d3">204.69</data>
+</edge>
+<edge source="J37" target="J31">
+  <data key="d2">-E37</data>
+  <data key="d3">117.19</data>
+</edge>
+<edge source="J37" target="J38">
+  <data key="d2">E39</data>
+  <data key="d3">187.5</data>
+</edge>
+<edge source="J37" target="J52">
+  <data key="d2">E61</data>
+  <data key="d3">115.62</data>
+</edge>
+<edge source="J38" target="J37">
+  <data key="d2">-E39</data>
+  <data key="d3">187.5</data>
+</edge>
+<edge source="J38" target="J24">
+  <data key="d2">E46</data>
+  <data key="d3">34.370000000000005</data>
+</edge>
+<edge source="J39" target="J6">
+  <data key="d2">-E40</data>
+  <data key="d3">76.56</data>
+</edge>
+<edge source="J39" target="J40">
+  <data key="d2">-E42</data>
+  <data key="d3">59.370000000000005</data>
+</edge>
+<edge source="J4" target="J3">
+  <data key="d2">-E3</data>
+  <data key="d3">64.06</data>
+</edge>
+<edge source="J4" target="J0">
+  <data key="d2">E4</data>
+  <data key="d3">31.25</data>
+</edge>
+<edge source="J40" target="J31">
+  <data key="d2">E41</data>
+  <data key="d3">90.62</data>
+</edge>
+<edge source="J40" target="J39">
+  <data key="d2">E42</data>
+  <data key="d3">59.370000000000005</data>
+</edge>
+<edge source="J41" target="J31">
+  <data key="d2">-E47</data>
+  <data key="d3">251.57</data>
+</edge>
+<edge source="J41" target="J42">
+  <data key="d2">E48</data>
+  <data key="d3">106.24000000000001</data>
+</edge>
+<edge source="J42" target="J41">
+  <data key="d2">-E48</data>
+  <data key="d3">106.24000000000001</data>
+</edge>
+<edge source="J42" target="J43">
+  <data key="d2">E49</data>
+  <data key="d3">59.379999999999995</data>
+</edge>
+<edge source="J42" target="J47">
+  <data key="d2">E55</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J43" target="J42">
+  <data key="d2">-E49</data>
+  <data key="d3">59.379999999999995</data>
+</edge>
+<edge source="J44" target="J10">
+  <data key="d2">-E38</data>
+  <data key="d3">79.69</data>
+</edge>
+<edge source="J46" target="J11">
+  <data key="d2">-E53</data>
+  <data key="d3">159.37</data>
+</edge>
+<edge source="J46" target="J35">
+  <data key="d2">-E54</data>
+  <data key="d3">123.44</data>
+</edge>
+<edge source="J47" target="J42">
+  <data key="d2">-E55</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J47" target="J48">
+  <data key="d2">-E56</data>
+  <data key="d3">62.5</data>
+</edge>
+<edge source="J47" target="J60">
+  <data key="d2">E72</data>
+  <data key="d3">153.13</data>
+</edge>
+<edge source="J48" target="J18">
+  <data key="d2">-E58</data>
+  <data key="d3">53.129999999999995</data>
+</edge>
+<edge source="J48" target="J47">
+  <data key="d2">E56</data>
+  <data key="d3">62.5</data>
+</edge>
+<edge source="J48" target="J49">
+  <data key="d2">E57</data>
+  <data key="d3">81.25999999999999</data>
+</edge>
+<edge source="J49" target="J48">
+  <data key="d2">-E57</data>
+  <data key="d3">81.25999999999999</data>
+</edge>
+<edge source="J5" target="J0">
+  <data key="d2">-E5</data>
+  <data key="d3">109.38</data>
+</edge>
+<edge source="J5" target="J7">
+  <data key="d2">E7</data>
+  <data key="d3">57.81</data>
+</edge>
+<edge source="J50" target="J35">
+  <data key="d2">-E59</data>
+  <data key="d3">131.25</data>
+</edge>
+<edge source="J50" target="J57">
+  <data key="d2">E50</data>
+  <data key="d3">39.06</data>
+</edge>
+<edge source="J50" target="J53">
+  <data key="d2">E62</data>
+  <data key="d3">28.129999999999995</data>
+</edge>
+<edge source="J50" target="J51">
+  <data key="d2">E65</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J51" target="J54">
+  <data key="d2">-E63</data>
+  <data key="d3">28.129999999999995</data>
+</edge>
+<edge source="J51" target="J50">
+  <data key="d2">-E65</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J51" target="J52">
+  <data key="d2">E60</data>
+  <data key="d3">151.56</data>
+</edge>
+<edge source="J52" target="J51">
+  <data key="d2">-E60</data>
+  <data key="d3">151.56</data>
+</edge>
+<edge source="J52" target="J37">
+  <data key="d2">-E61</data>
+  <data key="d3">115.62</data>
+</edge>
+<edge source="J53" target="J50">
+  <data key="d2">-E62</data>
+  <data key="d3">28.129999999999995</data>
+</edge>
+<edge source="J53" target="J54">
+  <data key="d2">-E64</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J54" target="J51">
+  <data key="d2">E63</data>
+  <data key="d3">28.129999999999995</data>
+</edge>
+<edge source="J54" target="J53">
+  <data key="d2">E64</data>
+  <data key="d3">100.0</data>
+</edge>
+<edge source="J55" target="J9">
+  <data key="d2">-E66</data>
+  <data key="d3">185.94</data>
+</edge>
+<edge source="J57" target="J50">
+  <data key="d2">-E50</data>
+  <data key="d3">39.06</data>
+</edge>
+<edge source="J58" target="J10">
+  <data key="d2">-E69</data>
+  <data key="d3">84.38</data>
+</edge>
+<edge source="J58" target="J59">
+  <data key="d2">-E70</data>
+  <data key="d3">79.69</data>
+</edge>
+<edge source="J58" target="J60">
+  <data key="d2">E71</data>
+  <data key="d3">85.94</data>
+</edge>
+<edge source="J59" target="J58">
+  <data key="d2">E70</data>
+  <data key="d3">79.69</data>
+</edge>
+<edge source="J6" target="J2">
+  <data key="d2">-E6</data>
+  <data key="d3">82.81</data>
+</edge>
+<edge source="J6" target="J39">
+  <data key="d2">E40</data>
+  <data key="d3">76.56</data>
+</edge>
+<edge source="J60" target="J58">
+  <data key="d2">-E71</data>
+  <data key="d3">85.94</data>
+</edge>
+<edge source="J60" target="J47">
+  <data key="d2">-E72</data>
+  <data key="d3">153.13</data>
+</edge>
+<edge source="J61" target="J28">
+  <data key="d2">-E51</data>
+  <data key="d3">51.56</data>
+</edge>
+<edge source="J7" target="J5">
+  <data key="d2">-E7</data>
+  <data key="d3">57.81</data>
+</edge>
+<edge source="J7" target="J8">
+  <data key="d2">E8</data>
+  <data key="d3">60.94</data>
+</edge>
+<edge source="J7" target="J9">
+  <data key="d2">E9</data>
+  <data key="d3">43.75</data>
+</edge>
+<edge source="J8" target="J7">
+  <data key="d2">-E8</data>
+  <data key="d3">60.94</data>
+</edge>
+<edge source="J8" target="J34">
+  <data key="d2">E34</data>
+  <data key="d3">50.0</data>
+</edge>
+<edge source="J9" target="J7">
+  <data key="d2">-E9</data>
+  <data key="d3">43.75</data>
+</edge>
+<edge source="J9" target="J10">
+  <data key="d2">E10</data>
+  <data key="d3">37.5</data>
+</edge>
+<edge source="J9" target="J11">
+  <data key="d2">E11</data>
+  <data key="d3">29.689999999999998</data>
+</edge>
+<edge source="J9" target="J55">
+  <data key="d2">E66</data>
+  <data key="d3">185.94</data>
+</edge>
+</graph></graphml>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-06-26 18:00:03 by Eclipse SUMO netedit Version 1.17.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/vishwajeet/ddp_workspace/src/mrpp_sumo/graph_sumo/pipeline2.net.xml"/>
+    </input>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<edges version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <edge id="-E0" from="J1" to="J0" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E1" from="J2" to="J1" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E10" from="J10" to="J9" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E11" from="J11" to="J9" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E12" from="J12" to="J11" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E13" from="J13" to="J12" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E14" from="J14" to="J12" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E15" from="J15" to="J14" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E16" from="J16" to="J0" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E17" from="J17" to="J16" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E18" from="J18" to="J16" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E19" from="J20" to="J19" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E2" from="J3" to="J2" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E20" from="J21" to="J20" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E21" from="J22" to="J19" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E22" from="J23" to="J19" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E23" from="J24" to="J23" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E24" from="J25" to="J17" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E25" from="J25" to="J20" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E26" from="J26" to="J17" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E27" from="J27" to="J26" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E28" from="J27" to="J28" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E29" from="J29" to="J28" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E3" from="J4" to="J3" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E30" from="J30" to="J29" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E31" from="J30" to="J31" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E32" from="J32" to="J29" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E33" from="J33" to="J32" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E34" from="J34" to="J8" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E35" from="J34" to="J35" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E36" from="J36" to="J1" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E37" from="J37" to="J31" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E38" from="J44" to="J10" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E39" from="J38" to="J37" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E4" from="J0" to="J4" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E40" from="J39" to="J6" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E41" from="J31" to="J40" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E42" from="J39" to="J40" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E43" from="J21" to="J33" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E44" from="J22" to="J21" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E45" from="J24" to="J22" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E46" from="J24" to="J38" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E47" from="J41" to="J31" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E48" from="J42" to="J41" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E49" from="J43" to="J42" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E5" from="J5" to="J0" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E50" from="J57" to="J50" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E51" from="J61" to="J28" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E53" from="J46" to="J11" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E54" from="J46" to="J35" priority="-1" numLanes="1" speed="13.89" shape="-210.94,207.81 -96.48,207.81 -87.50,207.81"/>
+    <edge id="-E55" from="J47" to="J42" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E56" from="J47" to="J48" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E57" from="J49" to="J48" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E58" from="J48" to="J18" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E59" from="J50" to="J35" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E6" from="J6" to="J2" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E60" from="J52" to="J51" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E61" from="J52" to="J37" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E62" from="J53" to="J50" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E63" from="J51" to="J54" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E64" from="J53" to="J54" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E65" from="J51" to="J50" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E66" from="J55" to="J9" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E69" from="J58" to="J10" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E7" from="J7" to="J5" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E70" from="J58" to="J59" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E71" from="J60" to="J58" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E72" from="J60" to="J47" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E8" from="J8" to="J7" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="-E9" from="J9" to="J7" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E0" from="J0" to="J1" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E1" from="J1" to="J2" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E10" from="J9" to="J10" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E11" from="J9" to="J11" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E12" from="J11" to="J12" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E13" from="J12" to="J13" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E14" from="J12" to="J14" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E15" from="J14" to="J15" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E16" from="J0" to="J16" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E17" from="J16" to="J17" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E18" from="J16" to="J18" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E19" from="J19" to="J20" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E2" from="J2" to="J3" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E20" from="J20" to="J21" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E21" from="J19" to="J22" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E22" from="J19" to="J23" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E23" from="J23" to="J24" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E24" from="J17" to="J25" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E25" from="J20" to="J25" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E26" from="J17" to="J26" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E27" from="J26" to="J27" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E28" from="J28" to="J27" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E29" from="J28" to="J29" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E3" from="J3" to="J4" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E30" from="J29" to="J30" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E31" from="J31" to="J30" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E32" from="J29" to="J32" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E33" from="J32" to="J33" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E34" from="J8" to="J34" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E35" from="J35" to="J34" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E36" from="J1" to="J36" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E37" from="J31" to="J37" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E38" from="J10" to="J44" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E39" from="J37" to="J38" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E4" from="J4" to="J0" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E40" from="J6" to="J39" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E41" from="J40" to="J31" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E42" from="J40" to="J39" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E43" from="J33" to="J21" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E44" from="J21" to="J22" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E45" from="J22" to="J24" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E46" from="J38" to="J24" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E47" from="J31" to="J41" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E48" from="J41" to="J42" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E49" from="J42" to="J43" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E5" from="J0" to="J5" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E50" from="J50" to="J57" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E51" from="J28" to="J61" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E53" from="J11" to="J46" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E54" from="J35" to="J46" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E55" from="J42" to="J47" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E56" from="J48" to="J47" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E57" from="J48" to="J49" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E58" from="J18" to="J48" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E59" from="J35" to="J50" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E6" from="J2" to="J6" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E60" from="J51" to="J52" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E61" from="J37" to="J52" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E62" from="J50" to="J53" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E63" from="J54" to="J51" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E64" from="J54" to="J53" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E65" from="J50" to="J51" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E66" from="J9" to="J55" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E69" from="J10" to="J58" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E7" from="J5" to="J7" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E70" from="J59" to="J58" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E71" from="J58" to="J60" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E72" from="J47" to="J60" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E8" from="J7" to="J8" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="E9" from="J7" to="J9" priority="-1" numLanes="1" speed="13.89"/>
+</edges>

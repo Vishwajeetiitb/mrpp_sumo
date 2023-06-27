@@ -1,13 +1,14 @@
-/init_locations : J152 J153 J154 J155 J156 J157 J158 J160 J161
+/init_locations : ''
 /use_sim_time : True
 /gui : False
-/graph : pipeline1
-/init_bots : 9
-/done : False
+/graph : pipeline3
+/init_bots : 12
+/done : False 
 /sim_length : 30000
 /algo_name : iot_communication_network
 /no_of_deads : 0
 /random_string : test
 /deploy_tag : graph
-/no_of_base_stations : 62
+/no_of_base_stations : 25
 /iot_device_range : 100
+/run_id : 0

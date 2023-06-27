@@ -29,13 +29,13 @@ color_list = [
     '#bcbd22',  # curry yellow-green
     '#17becf'   # blue-teal
 ]
-graph_name = 'iit_bombay'
+graph_name = 'pipeline2'
 
-deploy_tag = ['edge','graph']
+deploy_tag = ['graph']
 no_of_bots = [1,3,6,9,12,15]
-device_range = 500
+device_range = 100
 row_size = 1
-col_size = 2
+col_size = 1
 fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=['Base stations on {}'.format(i) for i in deploy_tag])    
 
 for idx,tag in enumerate(deploy_tag):

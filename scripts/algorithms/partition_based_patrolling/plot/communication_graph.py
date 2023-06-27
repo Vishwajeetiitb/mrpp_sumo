@@ -21,8 +21,9 @@ import os
 import urllib.parse
 import pickle
 
-graph_name = 'iit_bombay'
-range = 500
+graph_name = 'pipeline3'
+range = 300
+deploy_tag = 'graph'
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 # no_of_base_stations = np.load(dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'+ graph_name + '/required_no_of_base_stations.npy')[0]
 graph_results_path = dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'
@@ -32,16 +33,27 @@ G = nx.read_graphml(dirname + '/graph_ml/' + graph_name + '.graphml')
 ## Edges of the m
 edge_x = []
 edge_y = []
-
+points = []
 for e in G.edges():
-    shape = G[e[0]][e[1]]['shape'].split()
-    for point in shape:
-        point = pd.eval(point)
-        edge_x.append(point[0])
-        edge_y.append(point[1])
-    edge_x.append(None)
-    edge_y.append(None)
-
+    
+    if 'shape' in G[e[0]][e[1]]:
+        shape = G[e[0]][e[1]]['shape'].split()
+        for point in shape:
+            point = pd.eval(point)
+            edge_x.append(point[0])
+            edge_y.append(point[1])
+        edge_x.append(None)
+        edge_y.append(None)
+        print('lol')
+    else:
+        points.append(np.array([G.nodes[e[1]]['x'], G.nodes[e[1]]['y']]))
+        points.append(np.array([G.nodes[e[0]]['x'], G.nodes[e[0]]['y']]))
+        edge_x.append(G.nodes[e[0]]['x'])
+        edge_y.append(G.nodes[e[0]]['y'])
+        edge_x.append(G.nodes[e[1]]['x'])
+        edge_y.append(G.nodes[e[1]]['y'])
+        edge_x.append(None)
+        edge_y.append(None)
 ## Nodes of the graph
 node_x = []
 node_y = []
@@ -119,7 +131,9 @@ fig = go.Figure(data=[edge_trace, node_trace,hull_trace],
                 )
 
 # Base stations 
-base_stations_df = pd.read_csv(graph_results_path + graph_name + '/' + str(range) + '_range_base_stations_edge.csv',converters={'location': pd.eval,'Radius': pd.eval})
+path = '{}/scripts/algorithms/partition_based_patrolling/deployment_results/{}/on_{}/{}m_range'.format(dirname,graph_name,deploy_tag,range)
+n = [int(filename.split('_')[0]) for filename in os.listdir(path)]
+base_stations_df = pd.read_csv('{}/{}_base_stations.csv'.format(path,min(n)),converters={'location': pd.eval,'Radius': pd.eval})
 base_station_logo = Image.open(dirname + '/scripts/algorithms/partition_based_patrolling/plot/cross.png')
 
 base_stations = []

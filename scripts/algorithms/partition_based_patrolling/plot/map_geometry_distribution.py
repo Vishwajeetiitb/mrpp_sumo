@@ -23,7 +23,7 @@ from plotly.subplots import make_subplots
 import plotly.express as px
 import plotly.figure_factory as ff
 
-graph_names = ['iit_delhi','stanford','iit_bombay']
+graph_names = ['pipeline1','pipeline2','pipeline3']
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 # no_of_base_stations = np.load(dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'+ graph_name + '/required_no_of_base_stations.npy')[0]
 graph_results_path = dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'
@@ -43,9 +43,9 @@ color_list = [
 # for i in graph_names:
 #     for j in []: print(j+i)
 
-subplot_names = [j+i for i in graph_names for j in ['Node Degree Distribution for ','Edge length distribution for ']]
+subplot_names = [j+i for i in graph_names for j in ['','']]
 fig = make_subplots(rows=3, cols=2,subplot_titles=subplot_names,horizontal_spacing = 0.05,vertical_spacing=0.05)
-fig.update_layout(title='Map Geometry Distribution',title_x=0.5)
+# fig.update_layout(title='Pipelines Infrastructure Geometry Distribution',title_x=0.5)
 
 edge_dist_data = []
 node_dist_data = []
@@ -86,4 +86,7 @@ for idx,graph_name in enumerate(graph_names):
 
 fig.update_layout(xaxis2 = dict(range=[0, 600]),xaxis4 = dict(range=[0, 600]),xaxis6 = dict(range=[0, 600])) 
 fig.update_layout(xaxis1 = dict(range=[0.9, 5.1]),xaxis3 = dict(range=[0.9, 5.1]),xaxis5 = dict(range=[0.9, 5.1])) 
+
+fig.update_layout(yaxis2 = dict(range=[0, 0.01]),yaxis4 = dict(range=[0, 0.01]),yaxis6 = dict(range=[0, 0.01])) 
+fig.update_layout(yaxis1 = dict(range=[0,0.7]),yaxis3 = dict(range=[0,0.7]),yaxis5 = dict(range=[0,0.7])) 
 fig.show()

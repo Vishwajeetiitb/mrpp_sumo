@@ -69,7 +69,7 @@ class Deployer:
             with open(self.hull_path, "rb") as poly_file:
                 self.hull = pickle.load(poly_file)
         else:
-            self.hull = alphashape.alphashape(graph_points).buffer(100)
+            self.hull = alphashape.alphashape(graph_points).buffer(5)
             with open(self.hull_path, "wb") as poly_file:
                 pickle.dump(self.hull, poly_file, pickle.HIGHEST_PROTOCOL)
 
@@ -440,13 +440,13 @@ class Deployer:
         base_stations_df.to_csv('{}/{}_base_stations.csv'.format(path,n))
 
 if __name__ == '__main__':
-    deployer = Deployer('pipeline1')
+    deployer = Deployer('pipeline3')
     device_ranges = sorted([100],reverse=True)
-    start_n = 50
+    start_n = 3
     deploy_tag = 'graph'
     for device_range in device_ranges:
         vals = []
-        for i in range (10):
+        for i in range (100):
             n = start_n
             while True:
                 if deploy_tag == 'edge': points,r_max = deployer.Deploy_on_edges(no_of_base_stations=n)
