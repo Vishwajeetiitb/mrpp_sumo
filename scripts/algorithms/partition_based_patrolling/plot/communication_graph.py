@@ -29,31 +29,29 @@ dirname = rospkg.RosPack().get_path('mrpp_sumo')
 graph_results_path = dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'
 
 G = nx.read_graphml(dirname + '/graph_ml/' + graph_name + '.graphml')
+tree = ET.parse(dirname + '/graph_sumo/' + graph_name +".net.xml")
+root = tree.getroot()
 
-## Edges of the m
+# Edges of the graph
 edge_x = []
 edge_y = []
-points = []
-for e in G.edges():
-    
-    if 'shape' in G[e[0]][e[1]]:
-        shape = G[e[0]][e[1]]['shape'].split()
+for child in root:
+    if child.tag == 'edge':
+        shape = child[0].attrib['shape'].split()
         for point in shape:
             point = pd.eval(point)
             edge_x.append(point[0])
             edge_y.append(point[1])
         edge_x.append(None)
         edge_y.append(None)
-        print('lol')
-    else:
-        points.append(np.array([G.nodes[e[1]]['x'], G.nodes[e[1]]['y']]))
-        points.append(np.array([G.nodes[e[0]]['x'], G.nodes[e[0]]['y']]))
-        edge_x.append(G.nodes[e[0]]['x'])
-        edge_y.append(G.nodes[e[0]]['y'])
-        edge_x.append(G.nodes[e[1]]['x'])
-        edge_y.append(G.nodes[e[1]]['y'])
-        edge_x.append(None)
-        edge_y.append(None)
+
+edge_trace = go.Scatter(
+    x=edge_x, y=edge_y,
+    line=dict(width=3, color='black'),
+    hoverinfo='none',
+    mode='lines')
+
+
 ## Nodes of the graph
 node_x = []
 node_y = []
@@ -61,34 +59,30 @@ for node in G.nodes():
     node_x.append(G.nodes[node]['x'])
     node_y.append(G.nodes[node]['y'])
 
-edge_trace = go.Scatter(
-    x=edge_x, y=edge_y,
-    line=dict(width=1, color='black'),
-    hoverinfo='none',
-    mode='lines')
-
 node_trace = go.Scatter(
     x=node_x, y=node_y,
     mode='markers',
     hoverinfo='text',
+    
     marker=dict(
-        showscale=True,
+        showscale=False,
+    
         # colorscale options
         #'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
         #'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
         #'Hot' | 'Blackbody' | 'Earth' | 'Electric' | 'Viridis' |
         colorscale='Jet',
         reversescale=True,
+        coloraxis = "coloraxis",
         color=[],
-        size=6,
+        size=10,
         colorbar=dict(
             thickness=15,
-            title='Node Connections',
+            title='Avg node Idleness (post steady state) ',
             xanchor='left',
             titleside='right'
         ),
-        line_width=2))
-
+        line_width=1))
 node_adjacencies = []
 node_text = []
 for node, adjacencies in enumerate(G.adjacency()):
@@ -103,7 +97,7 @@ hull_path = dirname+'/graph_ml/'+graph_name+'_hull'
 if os.path.exists(hull_path):
     with open(hull_path, "rb") as poly_file:
         hull = pickle.load(poly_file)
-hull =hull.buffer(50)
+hull =hull.buffer(100)
 hull_x,hull_y = hull.exterior.coords.xy
 hull_x = hull_x.tolist()
 hull_y = hull_y.tolist()

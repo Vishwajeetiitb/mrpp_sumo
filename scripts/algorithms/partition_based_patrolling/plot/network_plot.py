@@ -14,9 +14,12 @@ import urllib.parse
 import plotly.io as pio
 
 
-graph_name = 'iitb_full'
+graph_name = 'pipeline3'
 algo_list = ['iot_communication_network_150','iot_communication_network_250','iot_communication_network_350','iot_communication_network_500','iot_communication_network_10000']
-row_size = 2
+device_ranges = [100,240,1000]
+device_names = ['Zigbee','BLE','LoRa']
+deploy_tag = 'graph'
+row_size = 1
 col_size = 3
 no_agents = 9
 steady_time_stamp = 3000
@@ -48,7 +51,7 @@ for child in root:
 
 edge_trace = go.Scatter(
     x=edge_x, y=edge_y,
-    line=dict(width=1, color='black'),
+    line=dict(width=2, color='black'),
     hoverinfo='none',
     mode='lines')
 
@@ -76,7 +79,7 @@ node_trace = go.Scatter(
         reversescale=True,
         coloraxis = "coloraxis",
         color=[],
-        size=3,
+        size=10,
         colorbar=dict(
             thickness=15,
             title='Avg node Idleness (post steady state) ',
@@ -85,49 +88,56 @@ node_trace = go.Scatter(
         ),
         line_width=1))
 
-def get_base_station_shape(algo):
-    range = int(algo.split('_')[-1])
-    base_stations_df = pd.read_csv(graph_results_path + graph_name + '/' + str(range) + '_range_base_stations.csv',converters={'location': pd.eval,'Radius': pd.eval})
+def get_base_station_shape(device_range,no_base_stations):
+    path = '{}/scripts/algorithms/partition_based_patrolling/deployment_results/{}/on_{}/{}m_range'.format(dirname,graph_name,deploy_tag,device_range)
+    n = [int(filename.split('_')[0]) for filename in os.listdir(path)]
+    base_stations_df = pd.read_csv('/{}/{}_base_stations.csv'.format(path,min(n)),converters={'location': pd.eval,'Radius': pd.eval})
     base_station_logo = Image.open(dirname + '/scripts/algorithms/partition_based_patrolling/plot/base.png')
     base_stations = []
     icons = []
     for idx, base_station in base_stations_df.iterrows():
-        radius = base_station['Radius']
+        radius = 20
         location = base_station['location']
         base_stations.append(dict(type="circle",
                                     xref="x",
                                     yref="y",
                                     fillcolor="rgba(1,1,1,0.06)",
-                                    x0=location[0]-radius,
-                                    y0=location[1]-radius,
-                                    x1=location[0]+radius,
-                                    y1=location[1]+radius,
+                                    x0=location[0]-base_station['Radius'],
+                                    y0=location[1]-base_station['Radius'],
+                                    x1=location[0]+base_station['Radius'],
+                                    y1=location[1]+base_station['Radius'],
                                     line_color="LightSeaGreen",line_width = 0))
 
         icons.append(dict(
                 source=base_station_logo,
                 xref="x",
                 yref="y",
-                x=location[0]-radius/10,
-                y=location[1]+radius/10,
-                sizex = radius/5,
-                sizey = radius/5
+                x=location[0]-radius,
+                y=location[1]+radius,
+                sizex = 2*radius,
+                sizey = 2*radius
             ))
     return base_stations,icons
 
 ###################################################################### Subplots ####################################################################################
 # title='Average Node Idleness Network Plot for ' + str(no_agents) + ' Agents'
-fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=[i for i in algo_list],vertical_spacing=0.1)
-fig.update_layout(title='Graph simulation scenearios' ,
+fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=device_names,vertical_spacing=0.1)
+fig.update_layout(title='Average Node Idleness' ,
                 titlefont_size=16,
                 title_x=0.5,
                 coloraxis = {'colorscale':'Jet'},
                 
                 )
 
-for m,algo_name in enumerate(algo_list):
-    idle = np.load(dirname+ "/post_process/"  + graph_name+ "/"+ algo_name + "/" + str(no_agents)+ "_agents/data_final.npy")
-    stamps = np.load(dirname+ "/post_process/" + graph_name+ "/"+ algo_name + "/"  + str(no_agents)+ "_agents/stamps_final.npy")
+
+for m,device_range in enumerate(device_ranges):
+    path = '{}/post_process/{}/on_{}/{}m_range'.format(dirname,graph_name,deploy_tag,device_range)
+    n = [int(filename.split('_')[0]) for filename in os.listdir(path)]
+    print(path)
+    df = pd.DataFrame()
+    results_path = '{}/{}_base_stations/{}_agents/run_0'.format(path,min(n),no_agents)
+    idle = np.load('{}/data_final.npz'.format(results_path))['arr_0']
+    stamps = np.load('{}/stamps_final.npz'.format(results_path))['arr_0']
     idle = idle[np.argwhere(stamps>steady_time_stamp)[0][0]:]  # Taking idlness values after steady state
     avg_idle = np.average(idle,axis=0)
     node_text = []
@@ -143,11 +153,11 @@ for m,algo_name in enumerate(algo_list):
     fig.add_trace(edge_trace,row=int(m/col_size)+1,col=m%col_size+1)
     fig.add_trace(node_trace,row=int(m/col_size)+1,col=m%col_size+1,)
 
-    if 'iot' in algo_name:
-        base_station_shape,icons = get_base_station_shape(algo_name)
-        for shape,img in zip(base_station_shape,icons):
-            fig.add_shape(shape,row=int(m/col_size)+1,col=m%col_size+1)
-            fig.add_layout_image(img,row=int(m/col_size)+1,col=m%col_size+1)
+
+    base_station_shape,icons = get_base_station_shape(device_range,min(n))
+    for shape,img in zip(base_station_shape,icons):
+        fig.add_shape(shape,row=int(m/col_size)+1,col=m%col_size+1)
+        fig.add_layout_image(img,row=int(m/col_size)+1,col=m%col_size+1)
 
 
     
@@ -215,5 +225,6 @@ print("http://vishwajeetiitb.github.io/mrpp_iot//scripts/algorithms/partition_ba
 
 fig.update_xaxes(scaleanchor = "y",scaleratio = 1)
 fig.update_yaxes(scaleanchor = "x",scaleratio = 1)
+fig.update_layout(xaxis1 = dict(range=[-10, 600]),xaxis2 = dict(range=[-10, 600]),xaxis3 = dict(range=[-10, 600])) 
 fig.write_image("./fig1.jpg",width = 3840, height = 2160)
 fig.show()
