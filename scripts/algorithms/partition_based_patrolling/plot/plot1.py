@@ -29,14 +29,14 @@ color_list = [
     '#bcbd22',  # curry yellow-green
     '#17becf'   # blue-teal
 ]
-graph_name = 'pipeline2'
+graph_name = 'pipeline3'
 
 deploy_tag = ['graph']
 no_of_bots = [1,3,6,9,12,15]
 device_range = 100
 row_size = 1
 col_size = 1
-fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=['Base stations on {}'.format(i) for i in deploy_tag])    
+fig = make_subplots(rows=row_size, cols=col_size)    
 
 for idx,tag in enumerate(deploy_tag):
     path = '{}/post_process/{}/on_{}/{}m_range'.format(dirname,graph_name,tag,device_range)
@@ -51,5 +51,5 @@ for idx,tag in enumerate(deploy_tag):
         val = val/np.arange(1,val.shape[0]+1)
         fig.add_trace(go.Scatter(x=stamps, y=val,mode='lines',marker=dict(color=color_list[m]),showlegend=(True if idx==0 else False),name='{}_agents'.format(bot),legendgroup=m),row=row_id,col=col_id)
 
-fig.update_layout(title_text = "Instantaneous Graph Idleness for {}m range base stations deployed with minimum number".format(device_range),title_x=0.5)
+fig.update_layout(title_text = "Instantaneous Graph Idleness for {} with Zigbee modules".format(graph_name),title_x=0.5)
 fig.show()

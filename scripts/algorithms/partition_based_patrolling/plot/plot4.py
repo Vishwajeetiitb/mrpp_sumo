@@ -29,14 +29,15 @@ color_list = [
     '#bcbd22',  # curry yellow-green
     '#17becf'   # blue-teal
 ]
-graph_name = 'iit_bombay'
+graph_name = 'pipeline3'
 
-deploy_tag = ['edge','graph']
-bot = 6
-device_ranges = [250,350,500]
+deploy_tag = ['graph']
+bot = 15
+device_ranges = [100,240,1000]
+device_names = ['Zigbee','BLE V5', 'LoRa']
 row_size = 1
-col_size = 2
-fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=['Base stations on {}'.format(i) for i in deploy_tag])
+col_size = 1
+fig = make_subplots(rows=row_size, cols=col_size)
 
 for idx,tag in enumerate(deploy_tag):
     for m, device_range in enumerate(device_ranges):
@@ -49,7 +50,7 @@ for idx,tag in enumerate(deploy_tag):
         stamps = np.load('{}/stamps_final.npz'.format(results_path))['arr_0']
         val = np.average(idle,axis=1).cumsum()
         val = val/np.arange(1,val.shape[0]+1)
-        fig.add_trace(go.Scatter(x=stamps, y=val,mode='lines',marker=dict(color=color_list[m]),showlegend=(True if idx==0 else False),name='{}m Communication range'.format(device_range),legendgroup=m),row=row_id,col=col_id)
+        fig.add_trace(go.Scatter(x=stamps, y=val,mode='lines',marker=dict(color=color_list[m]),showlegend=(True if idx==0 else False),name='{}'.format(device_names[m]),legendgroup=m),row=row_id,col=col_id)
 
 # fig.update_yaxes(range = [0,2200])
 fig.update_layout(title_text = "Instantaneous Graph Idleness for {}_Agents".format(bot),title_x=0.5)

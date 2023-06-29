@@ -29,11 +29,11 @@ color_list = [
     '#bcbd22',  # curry yellow-green
     '#17becf'   # blue-teal
 ]
-graph_name = 'pipeline2'
+graph_name = 'pipeline1'
 
 deploy_tag = ['graph']
 bot = 6
-device_ranges = [100,150]
+device_ranges = [100,240,1000]
 row_size = 1
 col_size = 3
 fig = make_subplots(rows=row_size, cols=col_size,subplot_titles=['{}m Communication Range'.format(i) for i in device_ranges])
