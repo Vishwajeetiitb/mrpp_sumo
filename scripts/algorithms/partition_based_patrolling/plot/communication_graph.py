@@ -21,8 +21,8 @@ import os
 import urllib.parse
 import pickle
 
-graph_name = 'pipeline3'
-range = 110
+graph_name = 'pipeline2'
+range = 240
 deploy_tag = 'graph'
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 # no_of_base_stations = np.load(dirname + '/scripts/algorithms/partition_based_patrolling/graphs_partition_results/'+ graph_name + '/required_no_of_base_stations.npy')[0]
@@ -75,7 +75,7 @@ node_trace = go.Scatter(
         reversescale=True,
         coloraxis = "coloraxis",
         color=[],
-        size=10,
+        size=20,
         colorbar=dict(
             thickness=15,
             title='Avg node Idleness (post steady state) ',
@@ -108,7 +108,7 @@ hull_trace = go.Scatter(
     mode='lines')
 ## Plot all data
 
-fig = go.Figure(data=[edge_trace, node_trace,hull_trace],
+fig = go.Figure(data=[edge_trace, node_trace],
              layout=go.Layout(
                 title=graph_name,
                 title_x = 0.5,
@@ -133,12 +133,12 @@ base_station_logo = Image.open(dirname + '/scripts/algorithms/partition_based_pa
 base_stations = []
 icons = []
 for idx, base_station in base_stations_df.iterrows():
-    radius = base_station['Radius']
+    radius = 10
     location = base_station['location']
     base_stations.append(dict(type="circle",
     xref="x", yref="y",
     fillcolor="rgba(1,1,1,0.1)",
-    x0=location[0]-radius, y0=location[1]-radius, x1=location[0]+radius, y1=location[1]+radius,
+    x0=location[0]-base_station['Radius'], y0=location[1]-base_station['Radius'], x1=location[0]+base_station['Radius'], y1=location[1]+base_station['Radius'],
     line_color="LightSeaGreen",line_width = 0
                     ))
 
@@ -146,10 +146,10 @@ for idx, base_station in base_stations_df.iterrows():
             source=base_station_logo,
             xref="x",
             yref="y",
-            x=location[0]-radius/16,
-            y=location[1]+radius/16,
-            sizex = radius/8,
-            sizey = radius/8
+            x=location[0]-radius,
+            y=location[1]+radius,
+            sizex = 2*radius,
+            sizey = 2*radius
         ))
 
 fig.update_layout(shapes=base_stations, images=icons)

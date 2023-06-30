@@ -20,7 +20,7 @@ deploy_tag = 'graph'
 device_ranges = [100,240,1000]
 device_names = ['Zigbee','BLE','LoRa']
 available_comparisons = ['Idleness', 'Worst Idleness']
-comparison_parameter_index = 0
+comparison_parameter_index = 1
 scater_nodes_algo_index =  -1# putting scatter for only one algo is better otherwise mess put -1 if don't require node scatter
 row_size = 2
 col_size = 3
@@ -55,7 +55,10 @@ for idx,no_agents in enumerate(no_agents_list):
             # val = np.average(idle,axis=1)
             val = np.average(idle,axis=1).cumsum()
             val = val/np.arange(1,val.shape[0]+1)
-        elif comparison_parameter_index == 1 : val = np.max(idle,axis=1)
+        elif comparison_parameter_index == 1 : 
+            val = np.max(idle,axis=1)
+            # val = np.max(idle,axis=1).cumsum()
+            # val = val/np.arange(1,val.shape[0]+1)
         fig.add_trace(go.Scatter(x=stamps, y=val,mode='lines',marker=dict(color=color_list[m]),legendgroup=m+1,name=device_names[m],showlegend=(True if idx==0 else False)),row=int(idx/col_size)+1,col=idx%col_size+1)
         if scater_nodes_algo_index !=-1 and scater_nodes_algo_index ==m:
             # print(np.repeat(stamps,idle.shape[1]).shape,idle.flatten().shape)

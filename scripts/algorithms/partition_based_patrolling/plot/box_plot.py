@@ -8,12 +8,15 @@ import os
 import urllib.parse
 
 
-graph_name = 'iitb_full'
-no_agents_list = [3,5,7,9,11,13]
+graph_name = 'pipeline1'
+no_agents_list = [1,3,6,9,12,15]
 algo_list = ['iot_communication_network_150','iot_communication_network_250','iot_communication_network_350','iot_communication_network_500','iot_communication_network_10000']
+deploy_tag = 'graph'
+device_ranges = [100,240,1000]
+device_names = ['Zigbee','BLE','LoRa']
 # algo_list = ['run1/'+ i for i in algo_list]
 steady_time_stamp = 3000
-runs = 5
+runs = 1
 dirname = rospkg.RosPack().get_path('mrpp_sumo')
 available_comparisons = ['avg_idleness', 'worst_idleness']
 
@@ -36,13 +39,16 @@ comparison_parameter_index = 0
 
 df = pd.DataFrame()
 for no_agents in no_agents_list:
-    for algo_name in algo_list:
+    for device_range in device_ranges:
         worst_idles = np.zeros
         avg_idles = np.zeros(0)
         for run_id in range(runs):
-            data_dir = '{}/post_process/{}/run{}/{}/{}_agents/'.format(dirname,graph_name,run_id,algo_name,no_agents)
-            idle = np.load(data_dir+"data_final.npy")
-            stamps = np.load(data_dir+"stamps_final.npy")
+            path = '{}/post_process/{}/on_{}/{}m_range'.format(dirname,graph_name,deploy_tag,device_range)
+            n = [int(filename.split('_')[0]) for filename in os.listdir(path)]
+            df = pd.DataFrame()
+            results_path = '{}/{}_base_stations/{}_agents/run_{}'.format(path,min(n),no_agents,run_id)
+            idle = np.load('{}/data_final.npz'.format(results_path))['arr_0']
+            stamps = np.load('{}/stamps_final.npz'.format(results_path))['arr_0']
             idle = idle[np.argwhere(stamps>steady_time_stamp)[0][0]:]  # Taking idlness values after steady state
             if run_id !=0:
                 size = min(worst_idles.shape[0],idle.max(axis=int(stamp_as_points)).shape[0])
@@ -58,7 +64,7 @@ for no_agents in no_agents_list:
 
         df_temp['Worst Idleness'] = worst_idles
         df_temp['Average Idleness'] = avg_idles
-        df_temp['Algorithm']= [algo_name]*worst_idles.shape[0]
+        df_temp['Algorithm']= [device_range]*worst_idles.shape[0]
         df_temp['Agents'] = [no_agents]*worst_idles.shape[0]
         df = pd.concat([df,df_temp])
 
